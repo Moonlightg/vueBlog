@@ -53,37 +53,38 @@ npm run dev
 
 ![image](https://user-images.githubusercontent.com/14285531/30852245-b5330cce-a2dd-11e7-9e09-9911b1ccfb47.png)
 
+3.6
+![image](https://user-images.githubusercontent.com/14285531/30853978-e34cab2e-a2e2-11e7-97c7-9d9d1dd89136.png)
+![image](https://user-images.githubusercontent.com/14285531/30854002-f5c1564c-a2e2-11e7-94aa-60ae18ad8d3f.png)
+![image](https://user-images.githubusercontent.com/14285531/30854020-03ad812c-a2e3-11e7-9b90-d2e37eec3715.png)
 
 
-> 4.个人配置 - 修改「BGAIssueBlog/src/store/account.js」文件中的「state」属性
+
+> 4.个人配置 - 修改「vue/src/store/account.js」文件中的「state」属性
 
 ```JavaScript
 const state = {
   accessToken: localStorage.getItem(LS_KEY_ACCESS_TOKEN),  // 这个不要修改，这个不要修改，这个不要修改。当前登录用户的 GitHub AccessToken
   auth: {
     proxy: 'https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token', // 这个不要修改，这个不要修改，这个不要修改。
-    clientID: '8fe09ec96875938b908d',   // 改成你在 https://github.com/settings/applications/new 新建的 OAuth application 的 Client ID
-    clientSecret: '46df51ccde6f3499c3b90861bba660fb1bcf15e4'  // 改成你在 https://github.com/settings/applications/new 新建的 OAuth application 的 Client Secret
+    clientID: '5b4cde4044d29cc1678d',   // 改成你在 https://github.com/settings/applications/new 新建的 OAuth application 的 Client ID
+    clientSecret: 'd506c402b90890d4cc584b1730623b0a8726ddd9'  // 改成你在 https://github.com/settings/applications/new 新建的 OAuth application 的 Client Secret
   },
   gitHubUser: null,  // 这个不要修改，这个不要修改，这个不要修改。
-  gitHubUsername: 'bingoogolapple',  // 修改成你自己的 GitHub 账号
-  copyright: '2014 - 2017',  // 修改成你自己的
-  recordNumber: '蜀ICP备17023604号',  // 修改成你自己的备案编号，如果没有备案的话就设置为 null
-  repo: 'bingoogolapple/bingoogolapple.github.io',  // 记录 Issue 的仓库的全名「用户名/仓库名」
+  gitHubUsername: 'Moonlightg',  // 修改成你自己的 GitHub 账号
+  copyright: '2017 - 2017',  // 修改成你自己的
+  recordNumber: 'null',  // 修改成你自己的备案编号，如果没有备案的话就设置为 null
+  repo: 'Moonlightg/mb',  // 记录 Issue 的仓库的全名「用户名/仓库名」
   pageSize: 10,  // 博客列表每页显示多少条博客
   showQQGroup: true,  // 如果要显示你自己的 QQ 群二维码图片的话这里配置成 true 并且替换「BGAIssueBlog-Web/static/img/qq-group.png」为你自己的 QQ 群二维码图片，否则配置成 false 即可
   thirdPartySite: [  // 配置你想在左上角展示的第三方站点信息
     {
       img: 'static/img/github.png',  // 第三方站点图标，存放在「BGAIssueBlog-Web/static/img」目录中
-      url: 'https://github.com/bingoogolapple'  // 第三方站点的 url
+      url: 'https://github.com/Moonlightg'  // 第三方站点的 url
     },
     {
       img: 'static/img/weibo.png',
-      url: 'http://weibo.com/bingoogol'
-    },
-    {
-      img: 'static/img/git.png',
-      url: 'https://bingoogolapple.gitbooks.io/bgalearningnotes-git/content'
+      url: 'http://weibo.com/MoonlightGjb'
     }
     // 如果还有其他站点需要显示，继续在这里追加
   ]
@@ -92,12 +93,12 @@ const state = {
 > 5.个人配置 - 修改网站图标
 
 ```
-修改「BGAIssueBlog/static/img/favicon.ico」文件
+修改「vueeBlog/static/img/favicon.ico」文件
 ```
 > 6.个人配置 - 修改网站标题
 
 ```
-修改「BGAIssueBlog/index.html」文件里「<title>」标签里的内容
+修改「vue/index.html」文件里「<title>」标签里的内容
 ```
 
 #### 发布到 GitHub Pages
@@ -110,53 +111,35 @@ npm run build
 > 2.发布
 
 ```
-拷贝「BGAIssueBlog/docs」目录里的所有文件到「GitHub Pages」的根目录下
+拷贝「vueBlog/docs」目录里的所有文件到「GitHub Pages」的根目录下
 并将「GitHub Pages」仓库 PUSH 到 GitHub 上
 ```
+#### 打包发布小白详细步骤
 
-#### 绑定域名到 GitHub Pages
+> 1.在GitHub 上创建一个仓库 [myblog]
 
-> 1.在「GitHub Pages」根目录下添加文件名为「CNAME」的文件，文件内容就是你的二级域名，例如我的是
+![image](https://user-images.githubusercontent.com/14285531/30853452-6beb12e2-a2e1-11e7-88f0-1c7266c8d699.png)
+![image](https://user-images.githubusercontent.com/14285531/30853458-704ab360-a2e1-11e7-8360-112dab04e22e.png)
 
-```
-www.bingoogolapple.cn
-```
-> 2.登录你的域名控制台添加域名解析
+> 2.把myblog 检出到本地
+![image](https://user-images.githubusercontent.com/14285531/30853462-73f4f7d2-a2e1-11e7-877e-28d301e769f7.png)
 
-```
-「记录类型」选择「CNAME」
-「主机记录」填「www」
-「记录值」填「GitHub用户名.github.io」，例如我的是「bingoogolapple.github.io」
-```
+> 3.把打包好的「vueBlog/docs」目录里的所有文件拷贝到「myblog」的根目录下
 
-## 关于我
+> 4.git bash 按顺序执行以下命令
 
-| 新浪微博 | 个人主页 | 邮箱 | BGA系列开源库QQ群
-| ------------ | ------------- | ------------ | ------------ |
-| <a href="http://weibo.com/bingoogol" target="_blank">bingoogolapple</a> | <a  href="http://www.bingoogolapple.cn" target="_blank">bingoogolapple.cn</a>  | <a href="mailto:bingoogolapple@gmail.com" target="_blank">bingoogolapple@gmail.com</a> | ![BGA_CODE_CLUB](http://7xk9dj.com1.z0.glb.clouddn.com/BGA_CODE_CLUB.png?imageView2/2/w/200) |
+git config --global user.name "你的github用户名"
+git config --global user.email "你的github绑定的邮箱"
 
-## 打赏支持
+4.1.`git status`
 
-如果您觉得 BGA 系列开源库帮你节省了大量的开发时间，请扫描下方的二维码随意打赏，要是能打赏个 10.24 :monkey_face:就太:thumbsup:了。您的支持将鼓励我继续创作:octocat:
+4.2.`git add .`
 
-如果您目前正打算购买通往墙外的梯子，可以使用我的邀请码「YFQ9Q3B」购买 [Lantern](https://github.com/getlantern/forum)，双方都赠送三个月的专业版使用时间:beers:
+4.3.`git status`
 
-<p align="center">
-  <img src="http://7xk9dj.com1.z0.glb.clouddn.com/bga_pay.png" width="450">
-</p>
+4.4.`git commit -m "modify"`
 
-## License
+4.5.`git pull`
 
-    Copyright 2016 bingoogolapple
+4.6.`git push`
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
