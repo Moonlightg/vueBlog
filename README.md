@@ -22,23 +22,16 @@
 - [x] 可以把每一个 Comment 作为一个小的知识点不停的追加到 Issue 里
 - [x] 结合 GitHub Pages 绑定域名来搭建个人博客站点
 
-## 效果图
+## Demo
 
-> 列表界面
-
-![列表界面](https://user-images.githubusercontent.com/8949716/29306642-28079ec8-81d1-11e7-959f-4da1e0dc488a.png)
-
-> 详情界面
-
-![详情界面](https://user-images.githubusercontent.com/8949716/29306679-4bb2d824-81d1-11e7-9e9b-d792f17aaf89.png)
-![详情界面-滚动到顶部和评论](https://user-images.githubusercontent.com/8949716/29306736-809e28c2-81d1-11e7-8252-8526a3baedbd.png)
-
-> 关于我界面
-
-![关于我界面](https://user-images.githubusercontent.com/8949716/29306836-d88c4c12-81d1-11e7-80c6-d461c05abeca.png)
+> [Moonlight的个人博客](https://moonlightg.github.io/mb)
 
 ## 使用方法
 
+#### 下载项目到本地
+```
+git clone https://github.com/Moonlightg/vueBlog.git
+```
 #### 本地运行
 
 > 1.安装依赖
