@@ -58,6 +58,16 @@ npm run dev
 
 ![image](https://user-images.githubusercontent.com/14285531/30852131-58457308-a2dd-11e7-90cd-f5b756c684d4.png)
 
+3.4
+
+![image](https://user-images.githubusercontent.com/14285531/30852226-a2559360-a2dd-11e7-9e88-4c786ca44f1b.png)
+
+3.5
+
+![image](https://user-images.githubusercontent.com/14285531/30852245-b5330cce-a2dd-11e7-9e09-9911b1ccfb47.png)
+
+
+
 > 4.个人配置 - 修改「BGAIssueBlog/src/store/account.js」文件中的「state」属性
 
 ```JavaScript
