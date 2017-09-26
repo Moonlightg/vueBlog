@@ -1,0 +1,54 @@
+  
+  .app {
+    display: flex;
+    height: 100%;
+  }
+  .left-container {
+    flex: 0 0 199px;
+    border-right: 1px solid #eeeeee;
+    height: 100%;
+  }
+  .left-layout-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+  } 
+  .main-container {
+    flex-grow: 1;
+  }
+  .left-user{ display: none; }
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .app {
+      display: block;
+      height: 100%;
+    }
+    .left-container{
+      flex: none;
+      height: auto;
+      border: none;
+    }
+    .left-layout-container{
+      position: fixed;
+      width: 15rem;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 9999;
+      background: #fff;
+      opacity: 1;
+      &.pc{ display:none; }
+    }
+    .left-layout-bg{
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      background: #999;
+      opacity: .5;
+    }
+    .left-menu{ display: none; }
+    .left-user{ display: block; }
+  }

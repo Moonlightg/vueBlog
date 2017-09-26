@@ -1,0 +1,35 @@
+$indicator-color: #3593f2;
+.left-menu {
+  flex: 1 1 150px;
+  min-height: 150px;
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  color: #4b595f;
+  li {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    cursor: pointer;
+    font-size: 16px;
+    &:before {
+      width: 4px;
+      height: 100%;
+      content: '';
+      margin-right: 46px;
+      float: left;
+      display: table;
+    }
+    &:hover {
+      &:before {
+        background-color: $indicator-color;
+      }
+    }
+  }
+  :first-child {
+    margin-bottom: 30px;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .left-menu{ display: none; }
+}

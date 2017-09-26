@@ -1,0 +1,125 @@
+/*
+ * flex.scss
+ * v1.2.0 MIT License
+ * https://moonlightg.github.io/mb/
+ * Copyright (c) 2016.7.8 Moonlight, Inc.
+ *
+*/
+
+// flex 布局
+@mixin display {
+  /* 2009 spec */
+  display: -webkit-box;
+  display: -moz-box;
+  display: -o-box;
+  /* 混合 */
+  display: -ms-flexbox;
+  /* 新版语法*/
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+}
+
+@mixin box_orient{
+  /* UC 浏览器 使用flex-direction: column;的时候需要加上*/
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  box-orient: vertical;
+}
+
+@mixin flex_direction($direction: row) {
+  -webkit-flex-direction: $direction;
+  -moz-flex-direction: $direction;
+  -ms-flex-direction: $direction;
+  -o-flex-direction: $direction;
+  flex-direction: $direction;
+}
+
+@mixin flex($value: 1) {
+  -webkit-box-flex: $value;
+  -moz-box-flex: $value;
+  -webkit-flex: $value $value auto;
+  -ms-flex: $value $value auto;
+  flex: $value $value auto;
+}
+
+@mixin flex_initial($value: initial) {
+  -webkit-box-flex: $value;
+  -moz-box-flex: $value;
+  -webkit-flex: $value;
+  -ms-flex: $value;
+  flex: $value;
+}
+
+@mixin align_items_center {
+  /*垂直居中*/
+  /*老版本语法*/
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  /*混合版本语法*/
+  -ms-flex-align: center;
+  /*新版本语法*/
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+@mixin align_items($content) {
+  /*垂直居中*/
+  /*老版本语法*/
+  -webkit-box-align: $content;
+  -moz-box-align: $content;
+  /*混合版本语法*/
+  -ms-flex-align: $content;
+}
+
+@mixin justify_content_center {
+  /*水平居中*/
+  /*老版本语法*/
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  /*混合版本语法*/
+  -ms-flex-pack: center;
+  /*新版本语法*/
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+@mixin justify_content($content) {
+  /*水平居中*/
+  /*老版本语法*/
+  -webkit-box-pack: $content;
+  -moz-box-pack: $content;
+  /*混合版本语法*/
+  -ms-flex-pack: $content;
+}
+
+@mixin justify_content_space_between {
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+@mixin flex_flow {
+  flex-flow: wrap;
+  -ms-flex-flow: wrap; //IE10
+}
+
+// flex-start | flex-end | center | space-between | space-around | stretch
+@mixin align-content($align: stretch) {
+  -webkit-align-content: $align;
+  -moz-align-content: $align;
+  -ms-align-content: $align;
+  align-content: $align;
+}
+
+// auto | flex-start | flex-end | center | baseline | stretch
+@mixin align_self($align: auto) {
+  -webkit-align-self: $align;
+  -moz-align-self: $align;
+  -ms-align-self: $align;
+  align-self: $align;
+}

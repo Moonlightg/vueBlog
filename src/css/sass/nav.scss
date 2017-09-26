@@ -1,0 +1,72 @@
+.navbar{
+	display: none;
+	nav {
+		position:fixed;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: $nav_height;
+	    background: $nav_background;
+	    color: #fff;
+	    z-index: 50;
+	    @include display;
+	    @include justify_content_center;
+	    .return {
+			color: #fff;
+			padding: 0 $margin;
+			z-index: 10;
+			font-size: $nav_icon_font_size;
+			position: absolute;
+			left: 0;
+			height: 100%;
+			@include display;
+			@include align_items_center;
+			&:active {
+				color: rgba(255,255,255,.5);
+			}
+	    }
+	    .nav_title {
+			position: relative;
+			z-index: 0;
+			text-align: center;
+			font-size: $nav_title_font_size;
+			font-weight: 400;
+			max-width: 60%;
+			@include display;
+			@include align_items_center;
+			p {
+				text-overflow:ellipsis;
+				white-space: nowrap;
+				overflow: hidden;
+				color: #fff;
+				line-height:1.1rem;
+			}
+		}
+		.nav_r {
+			position: absolute;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			z-index: 10;
+			font-size: $nav_icon_font_size;
+			@include display;
+			a {
+				@include display;
+				@include align_items_center;
+				color: #fff;
+				padding: 0 $margin;
+				&:active {
+				  color: rgba(255,255,255,.5);
+				}
+			}
+		}
+	}
+}
+.navbar + .left-user{
+	margin-top: 2.4rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .navbar {
+      display: block;
+    }
+}

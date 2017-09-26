@@ -1,0 +1,232 @@
+.transform(@transform) {
+  -webkit-transform: @transform; /* Safari 和 Chrome */
+     -moz-transform: @transform; /* Firefox */
+      -ms-transform: @transform; /* IE 9 */
+       -o-transform: @transform; /* Opera */
+          transform: @transform;
+}
+
+.transition(@transition) {
+  -webkit-transition: @transition;
+     -moz-transition: @transition;
+      -ms-transition: @transition;
+       -o-transition: @transition;
+          transition: @transition;
+}
+
+// Animations
+.animation(@animation) {
+  animation: @animation;
+  -webkit-animation: @animation;
+       -o-animation: @animation;
+}
+.animation-name(@name) {
+  animation-name: @name;
+  -webkit-animation-name: @name;
+}
+.animation-duration(@duration) {
+  animation-duration: @duration;
+  -webkit-animation-duration: @duration;
+}
+.animation-timing-function(@timing-function) {
+  animation-timing-function: @timing-function;
+  -webkit-animation-timing-function: @timing-function;
+}
+.animation-delay(@delay) {
+  animation-delay: @delay;
+  -webkit-animation-delay: @delay;
+}
+.animation-iteration-count(@iteration-count) {
+  animation-iteration-count: @iteration-count;
+  -webkit-animation-iteration-count: @iteration-count;
+}
+.animation-direction(@direction) {
+  animation-direction: @direction;
+  -webkit-animation-direction: @direction;
+}
+.animation-fill-mode(@fill-mode) {
+  animation-fill-mode: @fill-mode;
+  -webkit-animation-fill-mode: @fill-mode;
+}
+
+.will_transform {
+  //will-change: transform, opacity;
+  transform: translateZ(0);
+}
+
+
+.fades(@fillmode, @direction, @time: .35s) {
+  .will_transform;
+  .animation(~"fade@{fillmode}@{direction}" @time cubic-bezier(.25,.8,.25,1) .05s forwards);
+}
+
+.hiddens(@fillmode, @time: .35s) {
+  .will_transform;
+  .animation(~"@{fillmode}" @time cubic-bezier(.25,.8,.25,1) .05s forwards);
+}
+
+/*-- fade out bottom--*/
+.keyframes(@name, @rules) {
+
+  @keyframes @name {
+    @rules();
+  }
+
+  @-webkit-keyframes @name {
+    @rules();
+  }
+
+  @-moz-keyframes @name {
+    @rules();
+  }
+
+  @-ms-keyframes @name {
+    @rules();
+  }
+
+  @-o-keyframes @name {
+    @rules();
+  }
+}
+
+// 从底部淡出
+.keyframes(fadeoutbottom, {
+    0% {
+      .transform(translate3d(0, 0, 0));
+    }
+    100% {
+      .transform(translate3d(0, 100%, 0));
+    }
+});
+
+// 从底部淡入
+.keyframes(fadeinbottom, {
+    from {
+      opacity: 0;
+      .transform(translate3d(0, 100%, 0));
+    }
+    to {
+      opacity: 1;
+      .transform(translate3d(0, 0, 0));
+    }
+});
+
+// 从顶部淡出
+.keyframes(fadeouttop, {
+    0% {
+      .transform(translate3d(0, 0, 0));
+    }
+    100% {
+      .transform(translate3d(0, -100%, 0));
+    }
+});
+
+// 从顶部淡入
+.keyframes(fadeintop, {
+    0% {
+      .transform(translate3d(0, -100%, 0));
+    }
+    100% {
+      .transform(translate3d(0, 0, 0));
+    }
+});
+
+// 从左边淡出
+.keyframes(fadeoutleft, {
+    0% {
+      .transform(translate3d(0, 0, 0));
+    }
+    100% {
+      .transform(translate3d(-100%, 0, 0));
+    }
+});
+
+// 从左边淡入
+.keyframes(fadeinleft, {
+    0% {
+      .transform(translate3d(-100%, 0, 0));
+    }
+    100% {
+      .transform(translate3d(0, 0, 0));
+    }
+});
+
+// 从右边淡出
+.keyframes(fadeoutright, {
+    0% {
+      .transform(translate3d(0, 0, 0));
+      opacity: 1;
+    }
+    100% {
+      .transform(translate3d(100%, 0, 0));
+      opacity: 0;
+    }
+});
+
+// 从右边淡入
+.keyframes(fadeinright, {
+    0% {
+      .transform(translate3d(100%, 0, 0));
+      opacity: 0;
+    }
+    100% {
+      .transform(translate3d(0, 0, 0));
+      opacity: 1;
+    }
+});
+
+// 从中间淡出
+.keyframes(fadeoutcenter, {
+    0% {
+      .transform(scale3d(1, 1, 1));
+    }
+    100% {
+      .transform(scale3d(0, 0, 0));
+    }
+});
+
+// 从中间淡入
+.keyframes(fadeincenter, {
+    0% {
+      .transform(scale3d(0, 0, 0));
+    }
+    100% {
+      .transform(scale3d(1, 1, 1));
+    }
+});
+
+// 淡出
+.keyframes(fadeout, {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+});
+
+// 淡入
+.keyframes(fadein, {
+    0% {
+      opacity: 0;
+      visibility: visible;
+    }
+    100% {
+      opacity: 1;
+      visibility: visible;
+    }
+});
+
+// 隐藏
+.keyframes(hidden, {
+    100% {
+      display: none;
+    }
+});
+
+// 显示
+.keyframes(show, {
+    100% {
+      visibility: visible;
+    }
+});
