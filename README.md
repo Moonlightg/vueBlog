@@ -47,11 +47,17 @@ npm run dev
 > 3.[创建 OAuth Application](https://github.com/settings/applications/new)
 
 3.1 
+
 ![image](https://user-images.githubusercontent.com/14285531/30852074-2d843fa0-a2dd-11e7-8fd2-7e701e171428.png)
+
 3.2
+
 ![image](https://user-images.githubusercontent.com/14285531/30852109-49c09146-a2dd-11e7-9b9f-b2855a247fa1.png)
+
 3.3
+
 ![image](https://user-images.githubusercontent.com/14285531/30852131-58457308-a2dd-11e7-90cd-f5b756c684d4.png)
+
 > 4.个人配置 - 修改「BGAIssueBlog/src/store/account.js」文件中的「state」属性
 
 ```JavaScript
