@@ -1,15 +1,13 @@
-:running:BGAIssueBlog:running:
+:running:vueBlog:running:
 ============
-
-### [使用了该博客系统的个人博客站点列表](https://github.com/bingoogolapple/BGAIssueBlog/issues/4)，如果你的个人博客站点也使用了该博客系统，希望你能追加你的个人博客站点链接到这里面
 
 ## 目录
 
-* [项目背景](#项目背景)
-* [效果图](#效果图)
-* [使用方法](#使用方法)
-* [关于我](#关于我)
-* [打赏支持](#打赏支持)
+* [安装git](#安装git)
+* [安装node](#安装node)
+* [安装淘宝镜像cnpm](#安装淘宝镜像cnpm)
+* [本地运行](#本地运行)
+* [打包上传运行](#打包上传运行)
 
 ## 项目背景
 
@@ -48,7 +46,7 @@
 ```
 npm install
 ```
-> 2.在本地开启服务，然后就可以通过 http://localhost:8080 访问了
+> 2.在本地开启服务，然后就可以通过 http://localhost:8084 访问了
 
 ```
 npm run dev
