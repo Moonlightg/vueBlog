@@ -26,6 +26,11 @@ git clone https://github.com/Moonlightg/vueBlog.git
 ```
 npm install
 ```
+安装了cnpm就用
+```
+cnpm install
+```
+
 > 2.在本地开启服务，然后就可以通过 http://localhost:8084 访问了
 
 ```
