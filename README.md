@@ -3,7 +3,7 @@
 
 ## 目录
 
-* [安装git](#安装git)
+* [安装git](https://github.com/Moonlightg/mb/issues/15)
 * [安装node](#安装node)
 * [安装淘宝镜像cnpm](#安装淘宝镜像cnpm)
 * [本地运行](#本地运行)
