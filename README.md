@@ -132,9 +132,12 @@ npm run build
 > 3.把打包好的「vueBlog/docs」目录里的所有文件拷贝到「myblog」的根目录下
 
 > 4.git bash 按顺序执行以下命令
-
+```
+安装git后配置
 git config --global user.name "你的github用户名"
+
 git config --global user.email "你的github绑定的邮箱"
+```
 
 4.1.`git status`
 
