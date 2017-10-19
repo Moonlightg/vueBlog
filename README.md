@@ -1,4 +1,4 @@
-:running:BGAIssueBlog:running:
+:running:vueBlog:running:
 ============
 
 ### [使用了该博客系统的个人博客站点列表](https://github.com/bingoogolapple/BGAIssueBlog/issues/4)，如果你的个人博客站点也使用了该博客系统，希望你能追加你的个人博客站点链接到这里面
