@@ -54,7 +54,6 @@
   transform: translateZ(0);
 }
 
-
 .fades(@fillmode, @direction, @time: .35s) {
   .will_transform;
   .animation(~"fade@{fillmode}@{direction}" @time cubic-bezier(.25,.8,.25,1) .05s forwards);

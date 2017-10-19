@@ -14,6 +14,7 @@
         </ul>
         <ul class="left-menu">
           <router-link :class="isBlog ? 'selected-menu':''" tag="li" :to="{name: 'BlogList'}">个人博客</router-link>
+          <router-link :class="isWebNav ? 'selected-menu':''" tag="li" :to="{name: 'WebNav'}">前端导航</router-link>
           <router-link :class="isAboutMe ? 'selected-menu':''" tag="li" :to="{name: 'AboutMe'}">关于我</router-link>
         </ul>
         <div v-if="showQQGroup" class="qq-group">
@@ -60,6 +61,7 @@
           </ul>
           <ul class="left-menu">
             <router-link :class="isBlog ? 'selected-menu':''" tag="li" :to="{name: 'BlogList'}">个人博客</router-link>
+            <router-link :class="isWebNav ? 'selected-menu':''" tag="li" :to="{name: 'WebNav'}">前端导航</router-link>
             <router-link :class="isAboutMe ? 'selected-menu':''" tag="li" :to="{name: 'AboutMe'}">关于我</router-link>
           </ul>
           <!-- <div v-if="showQQGroup" class="qq-group">
@@ -121,6 +123,9 @@
       ]),
       isBlog () {
         return this.$route.name && this.$route.name.startsWith('Blog')
+      },
+      isWebNav () {
+        return this.$route.name === 'WebNav'
       },
       isAboutMe () {
         return this.$route.name === 'AboutMe'

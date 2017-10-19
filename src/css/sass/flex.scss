@@ -93,6 +93,9 @@
   -moz-box-pack: $content;
   /*混合版本语法*/
   -ms-flex-pack: $content;
+  /*新版语法*/
+  -webkit-justify-content: $content;
+  justify-content: $content;
 }
 
 @mixin justify_content_space_between {

@@ -18,6 +18,20 @@
     flex-grow: 1;
   }
   .left-user{ display: none; }
+  ::-webkit-scrollbar{
+    width:.3rem;
+    height:.3rem;
+    background-color:rgba(0,0,0,.02)
+  }
+  ::-webkit-scrollbar-track{
+    border-radius:.15rem;
+    box-shadow:inset .05rem .05rem .15rem rgba(0,0,0,.08)
+  }
+  ::-webkit-scrollbar-thumb{
+    border-radius:.15rem;
+    background-color:rgba(0,0,0,.1)
+  }
+  ::-webkit-scrollbar-thumb:hover{background-color:#3C6385}
   @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
     .app {
       display: block;

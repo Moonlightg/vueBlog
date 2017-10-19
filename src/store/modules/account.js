@@ -19,7 +19,7 @@ const state = {
   gitHubUsername: 'Moonlightg',  // 修改成你自己的 GitHub 账号
   copyright: '2017 - 2017',  // 修改成你自己的
   recordNumber: 'null',  // 修改成你自己的备案编号，如果没有备案的话就设置为 null
-  repo: 'Moonlightg/mb',  // 记录 Issue 的仓库的全名「用户名/仓库名」
+  repo: 'Moonlightg/mmp',  // 记录 Issue 的仓库的全名「用户名/仓库名」
   pageSize: 10,  // 博客列表每页显示多少条博客
   showQQGroup: true,  // 如果要显示你自己的 QQ 群二维码图片的话这里配置成 true 并且替换「BGAIssueBlog-Web/static/img/qq-group.png」为你自己的 QQ 群二维码图片，否则配置成 false 即可
   thirdPartySite: [  // 配置你想在左上角展示的第三方站点信息

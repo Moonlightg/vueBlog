@@ -1,24 +1,46 @@
-:running:vueBlog:running:
+:running:BGAIssueBlog:running:
 ============
+
+### [使用了该博客系统的个人博客站点列表](https://github.com/bingoogolapple/BGAIssueBlog/issues/4)，如果你的个人博客站点也使用了该博客系统，希望你能追加你的个人博客站点链接到这里面
 
 ## 目录
 
-* [安装git](https://github.com/Moonlightg/mb/issues/15)
-* [安装node](#安装node)
-* [安装淘宝镜像cnpm](#安装淘宝镜像cnpm)
-* [本地运行](#本地运行)
-* [打包上传运行](#打包上传运行)
+* [项目背景](#项目背景)
+* [效果图](#效果图)
+* [使用方法](#使用方法)
+* [关于我](#关于我)
+* [打赏支持](#打赏支持)
 
-## Demo
+## 项目背景
 
-> [Moonlight的个人博客](https://moonlightg.github.io/mb)
+刚接触 GitHub 的时候就开始在仓库 [bingoogolapple.github.io](https://github.com/bingoogolapple/bingoogolapple.github.io) 里创建 [Issues](https://github.com/bingoogolapple/bingoogolapple.github.io/issues) 来记录学习笔记，那时候我还不知道有 GitHub Pages，后来了解到了可以通过 GitHub Pages 来搭建 [个人博客站点](http://www.bingoogolapple.cn)，但是如果涉及到在文章里嵌套图片的话还是比较麻烦的
+
+通过 Issues 记录学习笔记的优点：
+
+- [x] 在线编辑和预览，随时添加和提交（不用担心电脑坏了导致笔记丢失）
+- [x] 当笔记里到嵌套图片时，支持粘贴屏幕截图和拖拽添加图片
+- [x] 带有搜索和排序功能
+- [x] 可通过 Label 来对 Issues 进行分类
+- [x] 可以把每一个 Comment 作为一个小的知识点不停的追加到 Issue 里
+- [x] 结合 GitHub Pages 绑定域名来搭建个人博客站点
+
+## 效果图
+
+> 列表界面
+
+![列表界面](https://user-images.githubusercontent.com/8949716/29306642-28079ec8-81d1-11e7-959f-4da1e0dc488a.png)
+
+> 详情界面
+
+![详情界面](https://user-images.githubusercontent.com/8949716/29306679-4bb2d824-81d1-11e7-9e9b-d792f17aaf89.png)
+![详情界面-滚动到顶部和评论](https://user-images.githubusercontent.com/8949716/29306736-809e28c2-81d1-11e7-8252-8526a3baedbd.png)
+
+> 关于我界面
+
+![关于我界面](https://user-images.githubusercontent.com/8949716/29306836-d88c4c12-81d1-11e7-80c6-d461c05abeca.png)
 
 ## 使用方法
 
-#### 下载项目到本地
-```
-git clone https://github.com/Moonlightg/vueBlog.git
-```
 #### 本地运行
 
 > 1.安装依赖
@@ -26,70 +48,43 @@ git clone https://github.com/Moonlightg/vueBlog.git
 ```
 npm install
 ```
-安装了cnpm就用
-```
-cnpm install
-```
-
-> 2.在本地开启服务，然后就可以通过 http://localhost:8084 访问了
+> 2.在本地开启服务，然后就可以通过 http://localhost:8080 访问了
 
 ```
 npm run dev
 ```
 > 3.[创建 OAuth Application](https://github.com/settings/applications/new)
 
-3.1 
-
-![image](https://user-images.githubusercontent.com/14285531/30852074-2d843fa0-a2dd-11e7-8fd2-7e701e171428.png)
-
-3.2
-
-![image](https://user-images.githubusercontent.com/14285531/30852109-49c09146-a2dd-11e7-9b9f-b2855a247fa1.png)
-
-3.3
-
-![image](https://user-images.githubusercontent.com/14285531/30852131-58457308-a2dd-11e7-90cd-f5b756c684d4.png)
-
-3.4
-
-![image](https://user-images.githubusercontent.com/14285531/30852226-a2559360-a2dd-11e7-9e88-4c786ca44f1b.png)
-
-3.5
-
-![image](https://user-images.githubusercontent.com/14285531/30852245-b5330cce-a2dd-11e7-9e09-9911b1ccfb47.png)
-
-3.6
-![image](https://user-images.githubusercontent.com/14285531/30853978-e34cab2e-a2e2-11e7-97c7-9d9d1dd89136.png)
-![image](https://user-images.githubusercontent.com/14285531/30854002-f5c1564c-a2e2-11e7-94aa-60ae18ad8d3f.png)
-![image](https://user-images.githubusercontent.com/14285531/30854020-03ad812c-a2e3-11e7-9b90-d2e37eec3715.png)
-
-
-
-> 4.个人配置 - 修改「vue/src/store/account.js」文件中的「state」属性
+![OAuth Application](https://user-images.githubusercontent.com/8949716/29244726-34983f0c-7ff2-11e7-98a7-6435b419c8dd.png)
+> 4.个人配置 - 修改「BGAIssueBlog/src/store/account.js」文件中的「state」属性
 
 ```JavaScript
 const state = {
   accessToken: localStorage.getItem(LS_KEY_ACCESS_TOKEN),  // 这个不要修改，这个不要修改，这个不要修改。当前登录用户的 GitHub AccessToken
   auth: {
     proxy: 'https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token', // 这个不要修改，这个不要修改，这个不要修改。
-    clientID: '5b4cde4044d29cc1678d',   // 改成你在 https://github.com/settings/applications/new 新建的 OAuth application 的 Client ID
-    clientSecret: 'd506c402b90890d4cc584b1730623b0a8726ddd9'  // 改成你在 https://github.com/settings/applications/new 新建的 OAuth application 的 Client Secret
+    clientID: '8fe09ec96875938b908d',   // 改成你在 https://github.com/settings/applications/new 新建的 OAuth application 的 Client ID
+    clientSecret: '46df51ccde6f3499c3b90861bba660fb1bcf15e4'  // 改成你在 https://github.com/settings/applications/new 新建的 OAuth application 的 Client Secret
   },
   gitHubUser: null,  // 这个不要修改，这个不要修改，这个不要修改。
-  gitHubUsername: 'Moonlightg',  // 修改成你自己的 GitHub 账号
-  copyright: '2017 - 2017',  // 修改成你自己的
-  recordNumber: 'null',  // 修改成你自己的备案编号，如果没有备案的话就设置为 null
-  repo: 'Moonlightg/mb',  // 记录 Issue 的仓库的全名「用户名/仓库名」
+  gitHubUsername: 'bingoogolapple',  // 修改成你自己的 GitHub 账号
+  copyright: '2014 - 2017',  // 修改成你自己的
+  recordNumber: '蜀ICP备17023604号',  // 修改成你自己的备案编号，如果没有备案的话就设置为 null
+  repo: 'bingoogolapple/bingoogolapple.github.io',  // 记录 Issue 的仓库的全名「用户名/仓库名」
   pageSize: 10,  // 博客列表每页显示多少条博客
   showQQGroup: true,  // 如果要显示你自己的 QQ 群二维码图片的话这里配置成 true 并且替换「BGAIssueBlog-Web/static/img/qq-group.png」为你自己的 QQ 群二维码图片，否则配置成 false 即可
   thirdPartySite: [  // 配置你想在左上角展示的第三方站点信息
     {
       img: 'static/img/github.png',  // 第三方站点图标，存放在「BGAIssueBlog-Web/static/img」目录中
-      url: 'https://github.com/Moonlightg'  // 第三方站点的 url
+      url: 'https://github.com/bingoogolapple'  // 第三方站点的 url
     },
     {
       img: 'static/img/weibo.png',
-      url: 'http://weibo.com/MoonlightGjb'
+      url: 'http://weibo.com/bingoogol'
+    },
+    {
+      img: 'static/img/git.png',
+      url: 'https://bingoogolapple.gitbooks.io/bgalearningnotes-git/content'
     }
     // 如果还有其他站点需要显示，继续在这里追加
   ]
@@ -98,12 +93,12 @@ const state = {
 > 5.个人配置 - 修改网站图标
 
 ```
-修改「vueeBlog/static/img/favicon.ico」文件
+修改「BGAIssueBlog/static/img/favicon.ico」文件
 ```
 > 6.个人配置 - 修改网站标题
 
 ```
-修改「vue/index.html」文件里「<title>」标签里的内容
+修改「BGAIssueBlog/index.html」文件里「<title>」标签里的内容
 ```
 
 #### 发布到 GitHub Pages
@@ -116,38 +111,53 @@ npm run build
 > 2.发布
 
 ```
-拷贝「vueBlog/docs」目录里的所有文件到「GitHub Pages」的根目录下
+拷贝「BGAIssueBlog/docs」目录里的所有文件到「GitHub Pages」的根目录下
 并将「GitHub Pages」仓库 PUSH 到 GitHub 上
 ```
-#### 打包发布小白详细步骤
 
-> 1.在GitHub 上创建一个仓库 [myblog]
+#### 绑定域名到 GitHub Pages
 
-![image](https://user-images.githubusercontent.com/14285531/30853452-6beb12e2-a2e1-11e7-88f0-1c7266c8d699.png)
-![image](https://user-images.githubusercontent.com/14285531/30853458-704ab360-a2e1-11e7-8360-112dab04e22e.png)
+> 1.在「GitHub Pages」根目录下添加文件名为「CNAME」的文件，文件内容就是你的二级域名，例如我的是
 
-> 2.把myblog 检出到本地
-![image](https://user-images.githubusercontent.com/14285531/30853462-73f4f7d2-a2e1-11e7-877e-28d301e769f7.png)
-
-> 3.把打包好的「vueBlog/docs」目录里的所有文件拷贝到「myblog」的根目录下
-
-> 4.git bash 按顺序执行以下命令
 ```
-安装git后配置
-git config --global user.name "你的github用户名"
+www.bingoogolapple.cn
+```
+> 2.登录你的域名控制台添加域名解析
 
-git config --global user.email "你的github绑定的邮箱"
+```
+「记录类型」选择「CNAME」
+「主机记录」填「www」
+「记录值」填「GitHub用户名.github.io」，例如我的是「bingoogolapple.github.io」
 ```
 
-4.1.`git status`
+## 关于我
 
-4.2.`git add .`
+| 新浪微博 | 个人主页 | 邮箱 | BGA系列开源库QQ群
+| ------------ | ------------- | ------------ | ------------ |
+| <a href="http://weibo.com/bingoogol" target="_blank">bingoogolapple</a> | <a  href="http://www.bingoogolapple.cn" target="_blank">bingoogolapple.cn</a>  | <a href="mailto:bingoogolapple@gmail.com" target="_blank">bingoogolapple@gmail.com</a> | ![BGA_CODE_CLUB](http://7xk9dj.com1.z0.glb.clouddn.com/BGA_CODE_CLUB.png?imageView2/2/w/200) |
 
-4.3.`git status`
+## 打赏支持
 
-4.4.`git commit -m "modify"`
+如果您觉得 BGA 系列开源库帮你节省了大量的开发时间，请扫描下方的二维码随意打赏，要是能打赏个 10.24 :monkey_face:就太:thumbsup:了。您的支持将鼓励我继续创作:octocat:
 
-4.5.`git pull`
+如果您目前正打算购买通往墙外的梯子，可以使用我的邀请码「YFQ9Q3B」购买 [Lantern](https://github.com/getlantern/forum)，双方都赠送三个月的专业版使用时间:beers:
 
-4.6.`git push`
+<p align="center">
+  <img src="http://7xk9dj.com1.z0.glb.clouddn.com/bga_pay.png" width="450">
+</p>
 
+## License
+
+    Copyright 2016 bingoogolapple
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.

@@ -1,0 +1,63 @@
+.wn-list{
+	display: inline-block;
+    border-bottom: 1px solid #edf1f2;
+    @include display;
+    @include justify_content(flex-end);
+	li{
+		display: inline-block;
+		a{
+			display: block;
+		    line-height: 14px;
+		    margin-bottom: 10px;
+		    padding: 10px;
+		    font-size: 14px;
+		    &:hover{
+		    	color: #ec1500;
+		    }
+		}
+		&.active a{
+			background: #2b333b;
+		    color: #fff;
+		    border-radius: 2px;
+		}
+	}
+}
+.webnav{
+	width: 100%; // 兼容 IE 10
+    flex-grow: 1;
+    overflow-y: auto;
+}
+.wn-box{
+	display: inline-table;
+    padding: $margin;
+    h1{
+    	font-size: 1.2rem;
+    	font-weight: 400;
+    	color: #14191e;
+    }
+}
+.wn-container{
+	@include display;
+	padding: $margin 0;
+	.wn-l{
+        margin-right: $margin;
+        span{ 
+        	display: block;
+        	width: 6rem;
+        	padding: .5rem;
+        	text-align: center;
+        	background-color: #dfdfdf;
+        }
+	}
+	.wn-r{
+		@include flex;
+		a{
+			padding: .5rem;
+    		display: inline-block;
+    		color: #07111B;
+    		&:hover{
+				color: #ec1500;
+    		}
+		}
+	}
+}

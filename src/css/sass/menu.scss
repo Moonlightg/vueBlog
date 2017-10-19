@@ -8,10 +8,11 @@ $indicator-color: #3593f2;
   color: #4b595f;
   li {
     width: 100%;
-    height: 60px;
-    line-height: 60px;
+    height: 45px;
+    line-height: 45px;
+    margin: .25rem 0;
     cursor: pointer;
-    font-size: 16px;
+    font-size: $fs8;
     &:before {
       width: 4px;
       height: 100%;
@@ -25,9 +26,6 @@ $indicator-color: #3593f2;
         background-color: $indicator-color;
       }
     }
-  }
-  :first-child {
-    margin-bottom: 30px;
   }
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
