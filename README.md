@@ -3,7 +3,7 @@
 
 ## 目录
 
-* [安装git](https://github.com/Moonlightg/mb/issues/15)
+* [安装git](https://github.com/Moonlightg/mmp/issues/15)
 * [安装node](#安装node)
 * [安装淘宝镜像cnpm](#安装淘宝镜像cnpm)
 * [本地运行](#本地运行)
@@ -11,7 +11,7 @@
 
 ## Demo
 
-> [Moonlight的个人博客](https://moonlightg.github.io/mb)
+> [Moonlight的个人博客](https://moonlightg.github.io/mmp)
 
 ## 使用方法
 
