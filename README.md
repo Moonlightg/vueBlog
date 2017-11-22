@@ -11,7 +11,7 @@
 
 ## Demo
 
-> [Moonlight的个人博客](https://moonlightg.github.io/mmp)
+> [Moonlight的个人博客](https://moonlightg.github.io/mb)
 
 ## 使用方法
 
