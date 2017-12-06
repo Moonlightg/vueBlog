@@ -1,7 +1,3 @@
-/**
- * Created by bingoogolapple on 2017/7/13.
- */
-
 module.exports = {
   getLabels (vue) {
     return vue.$http.get(`https://api.github.com/repos/${vue.$store.getters.repo}/labels`)
