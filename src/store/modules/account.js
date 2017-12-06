@@ -1,6 +1,3 @@
-/**
- * Created by bingoogolapple on 2017/5/31.
- */
 import { makeAction } from '../util'
 
 const SET_GITHUB_USER = 'SET_GITHUB_USER'
