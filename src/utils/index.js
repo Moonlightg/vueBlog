@@ -1,7 +1,3 @@
-/**
- * Created by bingoogolapple on 2017/7/13.
- */
-
 const gitHubApi = require('./gitHubApi')
 
 const isGetUserInfo = (vm, config) => {
