@@ -1,7 +1,3 @@
-/**
- * Created by bingoogolapple on 2017/7/14.
- */
-
 const showMessage = function (data) {
   if (data.message) {
     this.$message({
