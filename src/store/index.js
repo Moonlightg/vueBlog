@@ -1,6 +1,3 @@
-/**
- * Created by bingoogolapple on 2017/5/31.
- */
 import Vue from 'vue'
 import Vuex from 'vuex'
 import account from './modules/account'
