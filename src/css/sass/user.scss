@@ -1,10 +1,9 @@
 .user-info {
-  flex: 0 0 150px;
+  flex: 0 0 120px;
   margin-top: 50px;
   display: flex;
   align-items: center;
   flex-direction: column;
-
   img {
     width: 70px;
     flex: 0 0 70px;
@@ -15,22 +14,13 @@
       transition: 1s all ease-in;
     }
   }
-
   .login-name {
     margin-top: 14px;
     margin-bottom: 12px;
     font-size: 14px;
     flex: 0 0 16px;
     line-height: 16px;
-    color: #4b595f;
-  }
-
-  :last-child {
-    font-size: 13px;
-    margin: 0 20px;
-    flex: 0 0 18px;
-    line-height: 18px;
-    color: #849aa4;
+    color: #fff;
   }
 }
 
@@ -56,15 +46,15 @@
 }
 
 .selected-menu {
-  background-color: #e5f1fc;
-  color: $indicator-color;
+  color: #fff;
+  text-shadow: 0 0 6px rgba(0,120,255,.9);
   &:before {
     background-color: $indicator-color;
   }
 }
 
 .qq-group {
-  flex: 0 0 170px;
+  flex: 0 0 100px;
   margin-top: 50px;
   margin-left: 55px;
   width: 90px;
@@ -94,6 +84,9 @@
 }
 
 .copyright {
+  text-align: center;
+  font-size: 12px;
+  color: #888;
   flex: 0 0 20px;
   line-height: 20px;
 }

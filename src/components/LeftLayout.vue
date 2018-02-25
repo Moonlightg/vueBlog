@@ -13,21 +13,14 @@
           </li>
         </ul>
         <ul class="left-menu">
-          <router-link :class="isBlog ? 'selected-menu':''" tag="li" :to="{name: 'BlogList'}">个人博客</router-link>
-          <router-link :class="isWebNav ? 'selected-menu':''" tag="li" :to="{name: 'WebNav'}">前端导航</router-link>
-          <router-link :class="isAboutMe ? 'selected-menu':''" tag="li" :to="{name: 'AboutMe'}">关于我</router-link>
+          <router-link :class="isBlog ? 'selected-menu':''" tag="li" :to="{name: 'BlogList'}"><span>个人笔记</span></router-link>
+          <router-link :class="isWebNav ? 'selected-menu':''" tag="li" :to="{name: 'WebNav'}"><span>前端导航</span></router-link>
+          <router-link :class="isAboutMe ? 'selected-menu':''" tag="li" :to="{name: 'AboutMe'}"><span>关于我</span></router-link>
         </ul>
         <div v-if="showQQGroup" class="qq-group">
-          <span>我的QQ</span>
-          <span>扫码添加</span>
           <img src="static/img/qq-group.jpg">
         </div>
         <div class="copyright">@ {{copyright}}</div>
-        <!-- <div v-if="recordNumber" class="copyright">{{recordNumber}}</div> -->
-        <!-- <div class="powered">
-          主题 - <span
-          @click="openThirdPartySite('https://github.com/bingoogolapple/BGAIssueBlog')">BGAIssueBlog</span>
-        </div> -->
       </div>
       <!-- 移动端 -->
       <div class="navbar">
@@ -37,13 +30,13 @@
             <i class="icon-directory"/>
           </a>
           <!--标题-->
-          <h1 class="nav_title"><p>Moonlight</p></h1>
+          <h1 class="nav_title"><p>个人笔记</p></h1>
           <!--右侧图标-->
-          <div class="nav_r">
+<!--           <div class="nav_r">
             <a href="javascript:;">
               <i class="icon-search" />
             </a>
-          </div>
+          </div> -->
         </nav>
       </div>
       <div class="left-user">
@@ -52,7 +45,6 @@
           <div class="user-info">
             <img v-if="gitHubUser" @click="home" :src="gitHubUser.avatar_url">
             <div v-if="gitHubUser" class="login-name">{{gitHubUser.login}}</div>
-            <div v-if="gitHubUser">{{gitHubUser.bio}}</div>
           </div>
           <ul class="other-site">
             <li v-for="site in thirdPartySite" :key="site.url" @click="openThirdPartySite(site.url)">
@@ -60,21 +52,11 @@
             </li>
           </ul>
           <ul class="left-menu">
-            <router-link :class="isBlog ? 'selected-menu':''" tag="li" :to="{name: 'BlogList'}">个人博客</router-link>
-            <router-link :class="isWebNav ? 'selected-menu':''" tag="li" :to="{name: 'WebNav'}">前端导航</router-link>
-            <router-link :class="isAboutMe ? 'selected-menu':''" tag="li" :to="{name: 'AboutMe'}">关于我</router-link>
+            <router-link :class="isBlog ? 'selected-menu':''" tag="li" :to="{name: 'BlogList'}"><span>个人笔记</span></router-link>
+            <router-link :class="isWebNav ? 'selected-menu':''" tag="li" :to="{name: 'WebNav'}"><span>前端导航</span></router-link>
+            <router-link :class="isAboutMe ? 'selected-menu':''" tag="li" :to="{name: 'AboutMe'}"><span>关于我</span></router-link>
           </ul>
-          <!-- <div v-if="showQQGroup" class="qq-group">
-            <span>BGA 系列</span>
-            <span>开源库 QQ 群</span>
-            <img src="static/img/qq-group.png">
-          </div> -->
           <div class="copyright">@ {{copyright}}</div>
-          <!-- <div v-if="recordNumber" class="copyright">{{recordNumber}}</div> -->
-          <!-- <div class="powered">
-            主题 - <span
-            @click="openThirdPartySite('https://github.com/bingoogolapple/BGAIssueBlog')">BGAIssueBlog</span>
-          </div> -->
         </div>
         </transition>
         <transition name="fade">
