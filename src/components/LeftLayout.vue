@@ -26,7 +26,7 @@
       <div class="navbar">
         <nav>
           <!--左侧图标-->
-          <a class="return" @click="show = !show">
+          <a class="return" @click="toggleMenu()">
             <i class="icon-directory"/>
           </a>
           <!--标题-->
@@ -41,7 +41,7 @@
       </div>
       <div class="left-user">
         <transition name="slide-fade">
-        <div class="left-layout-container" v-if="show">
+        <div class="left-layout-container" v-if="showMenu">
           <div class="user-info">
             <img v-if="gitHubUser" @click="home" :src="gitHubUser.avatar_url">
             <div v-if="gitHubUser" class="login-name">{{gitHubUser.login}}</div>
@@ -52,15 +52,15 @@
             </li>
           </ul>
           <ul class="left-menu">
-            <router-link :class="isBlog ? 'selected-menu':''" tag="li" :to="{name: 'BlogList'}"><span>个人笔记</span></router-link>
-            <router-link :class="isWebNav ? 'selected-menu':''" tag="li" :to="{name: 'WebNav'}"><span>前端导航</span></router-link>
-            <router-link :class="isAboutMe ? 'selected-menu':''" tag="li" :to="{name: 'AboutMe'}"><span>关于我</span></router-link>
+            <router-link :class="isBlog ? 'selected-menu':''" tag="li" :to="{name: 'BlogList'}" @click.native="toggleMenu()"><span>个人笔记</span></router-link>
+            <router-link :class="isWebNav ? 'selected-menu':''" tag="li" :to="{name: 'WebNav'}" @click.native="toggleMenu()"><span>前端导航</span></router-link>
+            <router-link :class="isAboutMe ? 'selected-menu':''" tag="li" :to="{name: 'AboutMe'}" @click.native="toggleMenu()"><span>关于我</span></router-link>
           </ul>
           <div class="copyright">@ {{copyright}}</div>
         </div>
         </transition>
         <transition name="fade">
-          <div class="left-layout-bg" v-if="show" @click="show = !show"></div>
+          <div class="left-layout-bg" v-if="showMenu" @click="toggleMenu()"></div>
         </transition>
       </div>
   </div>
@@ -92,7 +92,7 @@
   export default {
     data () {
       return {
-        show: false
+        showMenu: false
       }
     },
     computed: {
@@ -119,6 +119,10 @@
       },
       openThirdPartySite (url) {
         window.open(url)
+      },
+      toggleMenu () {
+        this.showMenu = !this.showMenu
+        console.log('222')
       }
     }
   }
